@@ -1,0 +1,26 @@
+<mat-card *ngIf="movie" class="details-card">
+  <div class="details-container">
+    <img
+      mat-card-image
+      [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+      [alt]="movie.title"
+    />
+
+    <mat-card-content>
+      <h1>{{ movie.title }}</h1>
+      <p><strong>Release:</strong> {{ movie.release_date }}</p>
+      <p><strong>Rating:</strong> ⭐ {{ movie.vote_average }}</p>
+      <p>
+        <strong>Genres:</strong>
+        <span *ngFor="let g of movie.genres; let last = last">
+          {{ g.name }}<span *ngIf="!last">, </span>
+        </span>
+      </p>
+      <p>{{ movie.overview }}</p>
+    </mat-card-content>
+  </div>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="/">⬅ Back</button>
+  </mat-card-actions>
+</mat-card>

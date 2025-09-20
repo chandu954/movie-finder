@@ -1,0 +1,19 @@
+<app-search-bar (search)="onSearch($event)"></app-search-bar>
+
+<div class="movies-grid">
+  <mat-card
+    *ngFor="let movie of movies"
+    class="movie-card"
+    [routerLink]="['/movie', movie.id]"
+  >
+    <img
+      mat-card-image
+      [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+      [alt]="movie.title"
+    />
+    <mat-card-content>
+      <h3>{{ movie.title }}</h3>
+      <p>⭐ {{ movie.vote_average }} | 📅 {{ movie.release_date }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

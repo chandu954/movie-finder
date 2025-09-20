@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  🎬 Movie Finder
+  <span class="spacer"></span>
+  <button mat-button routerLink="/">Home</button>
+  <button mat-icon-button (click)="toggleTheme()" aria-label="Toggle theme">
+    <mat-icon>brightness_6</mat-icon>
+  </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
